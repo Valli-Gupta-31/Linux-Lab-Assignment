@@ -1,0 +1,13 @@
+=== File Access and I/O Investigation Report ===
+1. Open Files Identified: Utilized 'lsof' to intercept active file structures attached to running process definitions.
+2. File Descriptor Observations: Standard files descriptors 0, 1, and 2 map directly to target terminal pathways.
+3. Redirection Results: Captured standard outputs cleanly to success_output.txt and isolated execution faults to error_output.txt.
+4. Resource Limits: Queried process allocation guidelines via shell parameters.
+5. Storage Operations: Streams isolate processing faults transparently from standard runtime environments.
+
+Brief Observations:
+- File Descriptors serve as positive numeric tokens identifying open communication pipelines managed inside kernel lookup structures.
+- The default descriptors allocate channel 0 for standard input, channel 1 for standard output, and channel 2 for standard error tracking.
+- The '>' output operator replaces standard output destinations by swapping descriptor tables to output structural targets.
+- The '2>' operator isolates diagnostic crash footprints by writing stream errors safely away from normal pipeline displays.
+- Setting upper execution tracking parameters prevents single program anomalies from choking system operations via file descriptor exhaustion.

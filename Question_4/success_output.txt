@@ -1,0 +1,4 @@
+total 0
+drwxr-xr-x  3 srivalli  staff   96 30 Jun 18:17 .
+drwxr-xr-x  7 srivalli  staff  224 30 Jun 18:02 ..
+-rw-r--r--  1 srivalli  staff    0 30 Jun 18:17 success_output.txt

@@ -1,0 +1,13 @@
+=== Secure Project Workspace Report ===
+1. Directory Structure Created: Established secure_project/ with subdirectories docs/ and data/ under Question_2/.
+2. File Permissions Before and After: Initial permissions were -rw-r--r--. Modified permissions are -rw-------.
+3. Ownership Details: File owner is srivalli, and the primary group assignment is staff.
+4. Umask Value Used: The active session mask value is 022.
+5. Explanation of Protection: Stripping read and write privileges from group and others secures data integrity.
+
+Brief Observations:
+- The 'umask' value of 022 automatically restricts write permissions for group and others upon creation of new filesystem objects.
+- The 'mkdir -p' utility builds nested parent-child directory pathways concurrently without generating existence conflicts.
+- Running 'chmod 600' isolates the confidential target file by restricting all read and write privileges solely to the file owner.
+- The 'ls -l' command displays detailed block metadata including permission flags, link reference counts, ownership tokens, and timestamps.
+- These combined access controls ensure system-level isolation of sensitive multi-user environments.

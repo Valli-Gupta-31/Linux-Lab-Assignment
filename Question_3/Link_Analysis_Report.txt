@@ -1,0 +1,13 @@
+=== File System and Link Analysis Report ===
+1. Inode Numbers of Files: original.txt and hardlink.txt shared identical inode records. symlink.txt retained a unique inode record pointing to the filename string.
+2. Comparison: Hard links reference raw disk data blocks directly; symbolic links reference path strings.
+3. Effect of Deletion: Removing original.txt leaves hardlink.txt readable, while symlink.txt breaks.
+4. Metadata Collected: Inode numbers and data links observed via 'ls -li'.
+5. Conclusions: Hard links remain viable as long as the link count exceeds zero; symlinks depend entirely on target file existence.
+
+Brief Observations:
+- Inodes serve as internal metadata pointer records on Unix filesystems.
+- Creating a hard link duplicates the directory entry pointer without copying underlying data blocks, increments the file system link counter, and shares the same inode.
+- Creating a soft link ('ln -s') generates a standalone text file containing the exact file path of the source target.
+- Deleting the original file decrements the link count. Since the hard link still points to the active inode, data remains completely accessible.
+- The symbolic link breaks upon source deletion because its target string resolution path no longer exists on the disk.
